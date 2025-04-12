@@ -133,13 +133,13 @@ if __name__ == '__main__':
     print("binary: ", layup_seq_binary(1000))
     print("binary: ", layup_seq_binary(10000))
 
-    naive_xs = list(range(1, 11))
+    naive_xs = list(range(2, 21, 2))
     plt.plot(naive_xs, [
         timeit.timeit(f'layup_seq_naive({x})', setup="from __main__ import layup_seq_naive", number=1000)
         for x in naive_xs
     ])
     plt.xlabel('n')
-    plt.xlim(0, 10)
+    plt.xlim(0, 20)
     plt.ylabel('Runtime (s)')
     plt.savefig('naive.png')
     plt.close()
